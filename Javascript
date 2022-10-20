@@ -30,6 +30,17 @@ rray.prototype.findLargest = function () {
     }
 
     return maxValue
+const exportText = function () {
+    let docName = prompt("Enter document name", "Untitled");
+    const text = editor.innerText;
+    const blob = new Blob([text], {type: "text/plain"});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.download = `${docName}.txt`;
+    a.href = url;
+    a.click();
+    a.remove();
+}
 
 }
 
